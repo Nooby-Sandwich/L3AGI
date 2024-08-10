@@ -1,6 +1,4 @@
-from langchain.smith import RunEvalConfig, run_on_dataset
-from langchain_community.chat_models import ChatOpenAI
-from langsmith import Client
+from XAgent.xagent import XAgent
 
 # TODO: refactor test to use new auth
 
@@ -36,7 +34,13 @@ def agent_factory():
     #     },
     #     max_iterations=5,
     # )
-    pass
+    config_file = 'XAgent/assets/config.yml'
+    agent = XAgent(config_file = config_file)
+    
+    return agent
+
+
+
 
 
 agent = agent_factory()
